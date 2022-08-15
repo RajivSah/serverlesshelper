@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='serverlesshelper',
-    version='1.2.2',
+    version='1.3.0',
     author='Rajiv Sah',
     author_email='rajiv.shah01234@gmail.com',
     long_description_content_type="text/markdown",
