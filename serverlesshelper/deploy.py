@@ -65,13 +65,13 @@ def deploy():
         'function: ', completer=function_completer, complete_while_typing=True, history=FileHistory('/tmp/.serverlesshelper-deploy-history'))
 
     if not len(function_name):
-        os.system(f'serverless deploy --stage {stage}')
+        os.system(f'make deploy')
     else:
         func = files_map[function_name]
 
         if func.get('is_dir'):
             os.system(
-                f'(cd {func["dir"]} && serverless deploy --stage {stage})')
+                f'(cd {func["dir"]} && make deploy)')
         else:
             os.system(
                 f'(cd {func["dir"]} && serverless deploy function -f {func["name"]} --stage {stage})')
